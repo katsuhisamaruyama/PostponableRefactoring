@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <!--
+    <extension
+          point="org.eclipse.ui.editors">
+        <editor
+              class="org.jtool.postponablerefactoring.ui.JCompilationUnitEditor2"
+              default="true"
+              extensions="java"
+              icon="icons/jcu_obj.gif"
+              id="org.jtool.postponablerefactoring.editor"
+              name="Java Editor with Postponable Refactor">
+        </editor>
+    </extension>
+    -->
+    <extension
+          point="org.eclipse.ui.menus">
+       <menuContribution
+             allPopups="true"
+             class="org.jtool.postponablerefactoring.ui.MenuContribution"
+             locationURI="popup:org.eclipse.jdt.ui.CompilationUnitEditor.EditorContext?after=org.eclipse.jdt.ui.refactoring.menu">
+       </menuContribution>
+    </extension>
+    <extension
+          point="org.eclipse.ui.views">
+       <view
+             category="org.eclipse.ui"
+             class="org.jtool.postponablerefactoring.ui.PostponableRefactoringView"
+             icon="icons/showcat_co.gif"
+             id="postponableRefactoring.waitingRefactoringView"
+             name="Postponed Refactorings"
+             restorable="true">
+       </view>
+    </extension>
+</plugin>
