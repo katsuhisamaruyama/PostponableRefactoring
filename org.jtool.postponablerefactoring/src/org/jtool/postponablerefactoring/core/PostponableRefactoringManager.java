@@ -11,7 +11,6 @@ import org.jtool.postponablerefactoring.ui.PostponableRefactoringView;
 import org.jtool.macrorecorder.recorder.IMacroRecorder;
 import org.jtool.macrorecorder.recorder.IMacroListener;
 import org.jtool.macrorecorder.recorder.MacroEvent;
-import org.jtool.macrorecorder.recorder.IMacroCompressor;
 import org.jtool.macrorecorder.macro.Macro;
 import org.jtool.macrorecorder.macro.FileMacro;
 import org.jtool.macrorecorder.macro.DocumentMacro;
@@ -49,16 +48,13 @@ public class PostponableRefactoringManager implements IMacroListener {
     
     public void startListeners() {
         IMacroRecorder recorder = MacroRecorder.getInstance();
-        IMacroCompressor compressor = recorder.getMacroCompressor();
-        compressor.setDelimiter(new char[] { });
+        recorder.setDelimiter(new char[] { });
         recorder.addMacroListener(this);
-        recorder.start();
     }
     
     public void stopListeners() {
         IMacroRecorder recorder = MacroRecorder.getInstance();
         recorder.removeMacroListener(this);
-        recorder.stop();
     }
     
     @Override
