@@ -48,7 +48,7 @@ public class PostponableRefactoringManager implements IMacroListener {
     
     public void startListeners() {
         IMacroRecorder recorder = MacroRecorder.getInstance();
-        recorder.setDelimiter(new char[] { });
+        recorder.setDelimiter(null);
         recorder.addMacroListener(this);
     }
     
