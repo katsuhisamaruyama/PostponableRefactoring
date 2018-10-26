@@ -20,3 +20,4 @@ Require-Bundle: org.eclipse.core.resources;bundle-version="3.11.0",
  org.jtool.macrorecorder;bundle-version="1.0.0"
 Bundle-Activator: org.jtool.postponablerefactoring.Activator
 Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: org.jtool.postponablerefactoring
